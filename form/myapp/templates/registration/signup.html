@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>SignUp Page</h1>
+<hr>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{% url 'index' %}">
+    <button type="submit">Sign Up</button>
+  </form>
+<hr>
+<a href="{% url 'signup' %}">Create account</a>
+<br>
+<a href="{% url 'index' %}">Home</a>
+
+</body>
+</html>
